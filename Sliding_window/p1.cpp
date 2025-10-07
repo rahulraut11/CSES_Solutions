@@ -8,7 +8,6 @@ int main()
 
     int n, k;
     cin >> n >> k;
-    ll sum = 0;
     vi v(n);
     ll x, a, b, c;
     cin >> x >> a >> b >> c;
