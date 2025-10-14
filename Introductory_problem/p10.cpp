@@ -2,19 +2,15 @@
 using namespace std;
 using ll = long long;
 using vi = vector<ll>;
-const ll mod = 1e9 + 7;
 
 signed main()
 {
     ll n;
     cin >> n;
-    ll ans = 1;
-    while (n)
+    ll ans = 0;
+    for (ll i = 5; i <= n; i *= 5)
     {
-        ans *= 2;
-        ans %= mod;
-        n--;
+        ans += n / i;
     }
     cout << ans << endl;
-    return 0;
 }
