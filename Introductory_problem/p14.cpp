@@ -18,6 +18,6 @@ int main()
 {
     int n;
     cin >> n;
-    cout << (1 << n) - 1 << endl;
+    cout << (1 << n) - 1 << endl; // 2^n - 1
     f(n, 1, 3);
 }

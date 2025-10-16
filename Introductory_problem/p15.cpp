@@ -4,48 +4,48 @@ using namespace std;
 using ll = long long;
 using vi = vector<ll>;
 const ll mod = 1e9 + 7;
+map<char, int> freq;
+int n;
+vector<string> ans;
 
-int main()
+void build(string s)
 {
-    int t;
-    cin >> t;
-    while (t--)
+    if ((int)s.size() == n)
     {
-        int n;
-        cin >> n;
-        vi a(n);
-        int maxm = 0;
-        for (int i = 0; i < n; i++)
-        {
-            cin >> a[i];
-            if (a[i] > maxm)
-                maxm = a[i];
-        }
-        map<int, int> divs;
-        for (int i : a)
-        {
-            for (int x = 1; x * x <= i; x++)
-            {
-                if (i % x == 0)
-                {
-                    divs[x]++;
-                    if (x * x != i)
-                        divs[i / x]++;
-                }
-            }
-        }
-        for (int i = maxm - 1; i >= 2; i--)
-        {
-            int mult = 0;
-            if (divs.count(i) == 1)
-            {
-                mult = divs[i];
-            }
-            if (n - mult - 2 >= 0)
-            {
-                cout << i << endl;
-                break;
-            }
-        }
+        ans.push_back(s);
+        return;
+    }
+    for (auto [c, cnt] : freq)
+    {
+
+        freq[c]--;
+        if (freq[c] >= 0)
+            build(s + c);
+        freq[c]++;
     }
 }
+
+signed main()
+{
+    string s;
+    cin >> s;
+    n = s.size();
+    for (char c : s)
+        freq[c]++;
+    build("");
+    cout << ans.size() << endl;
+    for (string i : ans)
+        cout << i << endl;
+}
+
+// int cnt = 0;
+// sort(s.begin(), s.end());
+// vector<string> ans;
+// do
+// {
+//     cnt++;
+//     ans.push_back(s);
+// } while (next_permutation(s.begin(), s.end()));
+// cout << cnt << endl;
+// for (string s : ans)
+//     cout << s << endl;
