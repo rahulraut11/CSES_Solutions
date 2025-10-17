@@ -15,7 +15,7 @@ void f(int n, int from, int to)
     f(n - 1, other, to);
 }
 
-int main()
+signed main()
 {
     int n;
     cin >> n;

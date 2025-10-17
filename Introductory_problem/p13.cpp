@@ -27,7 +27,7 @@ vector<string> f(int i)
     return prev;
 }
 
-int main()
+signed main()
 {
     int n;
     cin >> n;

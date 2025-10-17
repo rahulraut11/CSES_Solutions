@@ -35,7 +35,7 @@ void place(int row, vector<string> &grid)
     }
 }
 
-int main()
+signed main()
 {
     vector<string> grid(8);
     // 8x8matrix

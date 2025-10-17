@@ -5,7 +5,7 @@ using ll = long long;
 using vi = vector<ll>;
 const ll mod = 1e9 + 7;
 
-int main()
+signed main()
 {
     int n;
     cin >> n;

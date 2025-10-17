@@ -15,7 +15,7 @@ int mindiff(int index, ll x, ll y, int n, vi &p)
     return min(mindiff(index + 1, x + p[index], y, n, p), mindiff(index + 1, x, y + p[index], n, p));
 }
 
-int main()
+signed main()
 {
     int n;
     cin >> n;

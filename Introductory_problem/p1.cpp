@@ -3,7 +3,7 @@ using namespace std;
 using ll = long long;
 using vi = vector<ll>;
 
-int main()
+signed main()
 {
     ll n;
     cin >> n;
