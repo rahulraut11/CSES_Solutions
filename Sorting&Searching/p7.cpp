@@ -1,0 +1,22 @@
+Sliding Window Sum
+3400 / 3554
+Sliding Window Minimum
+2648 / 3018
+Sliding Window Xor
+2540 / 2571
+Sliding Window Or
+1073 / 1980
+Sliding Window Distinct Values
+2116 / 2157
+Sliding Window Mode
+1477 / 1556
+Sliding Window Mex
+1318 / 1390
+Sliding Window Median
+13141 / 15046
+Sliding Window Cost
+8727 / 10079
+Sliding Window Inversions
+740 / 793
+Sliding Window Advertisement
+144 / 231
