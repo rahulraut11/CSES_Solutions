@@ -14,8 +14,8 @@ signed main()
         cin >> a[i];
     for (int i = 0; i < m; i++)
         cin >> b[i];
-    sort(a.begin(), a.end());
-    sort(b.begin(), b.end());
+    sort(all(a));
+    sort(all(b));
     ll ans = 0;
     int j = 0;
     for (int i = 0; i < n; i++)
