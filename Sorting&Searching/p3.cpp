@@ -1,3 +1,4 @@
+// Ferris wheel
 #include <bits/stdc++.h>
 using namespace std;
 using ll = long long;
@@ -12,22 +13,26 @@ signed main()
     vi p(n);
     for (int i = 0; i < n; i++)
         cin >> p[i];
-    sort(p.begin(), p.end());
-    ll i = 0, j = n - 1, ans = 0;
-    while (i <= j)
+    sort(all(p));
+    int l = 0, r = n - 1, ans = 0;
+    while (l <= r)
     {
-        if (p[i] + p[j] <= x)
+        if (l == r)
         {
             ans++;
-            i++;
-            j--;
+            break;
+        }
+        if (p[l] + p[r] <= x)
+        {
+            ans++;
+            l++;
+            r--;
         }
         else
         {
+            r--;
             ans++;
-            j--;
         }
     }
     cout << ans << endl;
-    return 0;
 }
