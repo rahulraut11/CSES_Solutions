@@ -7,14 +7,21 @@ using vi = vector<ll>;
 
 signed main()
 {
-    ll n;
+    ll n, cnt = 0, ans = 0;
     cin >> n;
-    vector<pair<ll, ll>> a(n);
+    vector<pair<int, int>> events;
     for (int i = 0; i < n; i++)
     {
-        ll x, y;
+        int x, y;
         cin >> x >> y;
-        a.push_back({y, x});
+        events.push_back({x, 1});
+        events.push_back({y, -1});
     }
-    
+    sort(all(events));
+    for (auto [time, type] : events)
+    {
+        cnt += type;
+        ans = max(ans, cnt);
+    }
+    cout << ans << endl;
 }

@@ -7,25 +7,27 @@ using vi = vector<ll>;
 
 signed main()
 {
-    ll n, m;
+    ll n, m, x;
     cin >> n >> m;
-    vi cost(n);
+    multiset<int> price;
     for (int i = 0; i < n; i++)
-        cin >> cost[i];
+    {
+        cin >> x;
+        price.insert(x);
+    }
     vi maxm(m);
     for (int i = 0; i < m; i++)
         cin >> maxm[i];
-    sort(cost.begin(), cost.end(), greater<int>());
-    ll i = 0, j = 0;
-    while (i <= n || j <= m)
+    for (int i = 0; i < m; i++)
     {
-        if (maxm[j] >= cost[i])
-        {
-            cout << cost[i] << endl;
-            j++;
-            i++;
-        }
+        auto it = price.upper_bound(maxm[i]);
+        if (it == price.begin())
+            cout << -1 << endl;
         else
-            i++;
+        {
+            it--;
+            cout << *it << endl;
+            price.erase(it);
+        }
     }
 }
