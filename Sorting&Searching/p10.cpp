@@ -1,4 +1,4 @@
-// Stick Lengths
+// Mission Coin Sum
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -11,12 +11,17 @@ signed main()
 {
     ll n;
     cin >> n;
-    vi p(n);
+    vi a(n);
     for (int i = 0; i < n; i++)
-        cin >> p[i];
-    sort(all(p));
-    ll med = p[n / 2], ans = 0;
-    for (int i : p)
-        ans += abs(med - i);
-    cout << ans << endl;
+        cin >> a[i];
+    sort(all(a));
+    ll val = 1;
+    for (ll i : a)
+    {
+        if (val < i)
+            break;
+        else
+            val += i;
+    }
+    cout << val << endl;
 }
