@@ -15,11 +15,10 @@ signed main()
     for (int i = 0; i < n; i++)
         cin >> a[i];
     ll ans = a[0], end = a[0];
-    for (int i = 1; i < n; i++)
+    for (ll i = 1; i < n; i++)
     {
         end = max(a[i], end + a[i]);
         ans = max(ans, end);
     }
     cout << ans << endl;
-    return 0;
 }
