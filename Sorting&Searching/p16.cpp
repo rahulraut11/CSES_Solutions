@@ -17,7 +17,7 @@ signed main()
     for (int i = 0; i < n; i++)
         cin >> a[i];
     ll ans = 0;
-    unordered_map<int, int> freq;
+    map<int, int> freq;
     int l = 0;
     for (int r = 0; r < n; r++)
     {
