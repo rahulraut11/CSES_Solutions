@@ -1,16 +1,36 @@
 #include <bits/stdc++.h>
-
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
 using namespace std;
-using ll = long long;
-using vi = vector<ll>;
-#define pb(i) push_back(i)
-#define all(x) (x).begin(), (x).end()
+using namespace __gnu_pbds;
 
-signed main()
+using ll = long long;
+
+using pii = pair<int, int>;
+
+#define ordered_set tree<pii, null_type, less<pii>, rb_tree_tag, tree_order_statistics_node_update>
+
+int main()
 {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    ll mod = 1e9 + 7;
 
+    int n;
+    cin >> n;
+    string s;
+    cin >> s;
+    int pref = 0, ans = 0;
+    ordered_set st;
+    st.insert({0, 0});
 
+    for (int i = 1; i <= n; i++)
+    {
+        if (s[i - 1] == 'A')
+            pref++;
+        else if (s[i - 1] == 'B')
+            pref--;
+        ans += st.order_of_key({pref, -1});
+        st.insert({pref, i});
+    }
+    cout << ans << endl;
 }
