@@ -23,10 +23,9 @@ signed main()
     {
         for (int j = 0; j < n; j++)
             if (c[j] <= i)
-                dp[i] = min(dp[i - c[j]], dp[i]);
-        dp[i]++;
+                dp[i] = min(dp[i - c[j]] + 1, dp[i]);
     }
-    if (dp[x] == 1e9 + 1)
+    if (dp[x] == 1e9)
         cout << -1 << endl;
     else
         cout << dp[x] << endl;
